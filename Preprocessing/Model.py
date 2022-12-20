@@ -30,6 +30,14 @@ sns.scatterplot(x="rating_tempat", y="tarif",hue = 'kluster',
 palette=['red','yellow','green','blue','purple', 'orange'], data=df)
 
 
+# banyaknya data untuk setiap kluster
+print("jumlah anggota untuk setiap kluster")
+df['kluster'].value_counts()
+# kluster 0 jumlahnya paling banyak (619 data) karena ratingnya yg tinggi (rating 5) dan jangkauan tarifnya
+# relatif standar (antara Rp. 0 - Rp 25.000)
+# kluster 5 jumlahnya paling sedikit (52 data) karena tarif wisata nya mahal dan ratingnya standar
+
+
 #Menginialisasi kembali variabel kluster dengan jenis kluster masing-masing dan sesuai dengan kolom tarif dan ratin tempat kluster
 kluster0 = df.loc[(df['kluster'] == 0), ['tarif', 'rating_tempat']]
 kluster1 = df.loc[(df['kluster'] == 1), ['tarif', 'rating_tempat']]
