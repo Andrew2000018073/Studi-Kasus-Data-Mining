@@ -37,7 +37,14 @@ kluster2 = df.loc[(df['kluster'] == 2), ['tarif', 'rating_tempat']]
 kluster3 = df.loc[(df['kluster'] == 3), ['tarif', 'rating_tempat']]
 kluster4 = df.loc[(df['kluster'] == 4), ['tarif', 'rating_tempat']]
 
-#Melihat rata-rata dari rating dan tarif pada setiap cluster
-print('jumlah kluster 0 pada dataset : ', len(kluster0))
+#Melihat rata-rata dari rating dan tarif pada setiap cluster. Serta tarif dan rating tempat dengan nilai terkecil dan terbesar pada setiap kelompok cluster
+tarif_min = kluster0['tarif'].min()
+tarif_max = kluster0['tarif'].max()
+rating_min = kluster0['rating_tempat'].min()
+rating_max = kluster0['rating_tempat'].max()
+print('total kelompok kluster 0 pada dataset : ', len(kluster0))
+print('rentang tarif  : ', 'Rp. ', tarif_min, ' - ', 'Rp. ', tarif_max)
+print('rentang rating : ', rating_min, ' - ', rating_max)
+print('_______________________________________________________________')
 print('informasi rata - rata : ')
 kluster0.mean()
